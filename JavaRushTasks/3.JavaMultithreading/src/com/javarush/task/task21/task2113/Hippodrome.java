@@ -17,7 +17,7 @@ public class Hippodrome {
         game.run();
         game.printWinner();
         
-       // System.out.print(game.getHorses());
+
 
 
     }
