@@ -9931,3 +9931,23 @@
 2020-01-06 13:28:55 INFO  PluginTasksProjectComponent.projectClosing(188) - ---------- Project closed ----------
 
 2020-01-06 13:28:55 INFO  ApacheHttpClient.getTask(479) - responseCode = 200
+2020-01-09 19:54:47 INFO  PluginTasksProjectComponent.projectOpened(77) - ---------- Project opened ----------
+2020-01-09 19:54:47 INFO  PluginTasksProjectComponent.projectOpened(78) - ---------- Version 3.37 ----------
+
+2020-01-09 19:54:47 INFO  ApacheHttpClient.createAsyncHttpClient(143) - 1 proxies selected. Type: DIRECT
+2020-01-09 19:54:47 INFO  ApacheHttpClient.<init>(94) - ApacheHttpClient was successfully instantiated.
+2020-01-09 19:54:49 INFO  ApacheHttpClient.testConnection(201) - responseCode = 200
+2020-01-09 19:54:49 INFO  ApacheHttpClient.testConnection(216) - result = true
+2020-01-09 19:54:51 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(593) - Waiting for server response.
+2020-01-09 19:54:51 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(593) - Waiting for server response.
+2020-01-09 19:54:51 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(593) - Waiting for server response.
+2020-01-09 19:54:51 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(593) - Waiting for server response.
+2020-01-09 19:54:51 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(593) - Waiting for server response.
+2020-01-09 19:54:53 INFO  ApacheHttpClient.refreshUserInfo(301) - responseCode = 200
+2020-01-09 19:54:53 INFO  ApacheHttpClient.refreshUserInfo(307) - User information received.
+2020-01-09 19:54:53 INFO  ApacheHttpClient.startGA(35) - GAService started.
+2020-01-09 19:54:53 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2020-01-09 19:54:59 INFO  ApacheHttpClient.getWebResourceAsStream(493) - responseCode = 200
+2020-01-09 19:55:17 INFO  PluginTasksProjectComponent.projectClosing(188) - ---------- Project closed ----------
+
+2020-01-09 19:55:18 INFO  ApacheHttpClient.getTask(479) - responseCode = 200
