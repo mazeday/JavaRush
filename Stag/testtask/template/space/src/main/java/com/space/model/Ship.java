@@ -28,7 +28,7 @@ public class Ship {
     @Column(name = "shipType")
     @Enumerated(EnumType.STRING)
     @JsonInclude
-    ShipType shipTyp; //Тип корабля
+    ShipType shipType; //Тип корабля
 
     @Column(name = "prodDate")
     @Temporal(TemporalType.DATE)
@@ -51,4 +51,77 @@ public class Ship {
     @JsonInclude
     Double rating; //Рейтинг корабля. Используй математическое округление до сотых.
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPlanet() {
+        return planet;
+    }
+
+    public void setPlanet(String planet) {
+        this.planet = planet;
+    }
+
+    public ShipType getShipType() {
+        return shipType;
+    }
+
+    public void setShipType(ShipType shipType) {
+        this.shipType = shipType;
+    }
+
+    public Date getProdDate() {
+        return prodDate;
+    }
+
+    public void setProdDate(Date prodDate) {
+        this.prodDate = prodDate;
+    }
+
+    public Boolean getIsUsed() {
+        return isUsed;
+    }
+
+    public void setIsUsed(Boolean used) {
+        isUsed = used;
+    }
+
+    public Double getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(Double speed) {
+        this.speed = speed;
+    }
+
+    public Integer getCrewSize() {
+        return crewSize;
+    }
+
+    public void setCrewSize(Integer crewSize) {
+        this.crewSize = crewSize;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating() {
+        double k = 1;
+        if (this.isUsed) k = 0.5;
+        this.rating = Math.round(((80 * this.speed * k) / (3020 - (this.getProdDate().getYear() + 1900))) * 100.0) / 100.0 ;
+    }
 }
