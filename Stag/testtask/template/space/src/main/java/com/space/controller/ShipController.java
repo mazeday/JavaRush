@@ -25,12 +25,20 @@ public class ShipController {
     //CREATE
     @RequestMapping(value = "rest/ships", method = RequestMethod.POST)
     public ResponseEntity createShip(@RequestBody Ship ship) {
-
+        if (!shipService.isParamsNull(ship) && shipService.isParamsValid(ship)) {
+            ship.setIsUsed(ship.getIsUsed() == null ? false : ship.getIsUsed());
+            ship.setRating();
+            shipService.add(ship);
+            return new ResponseEntity(ship, HttpStatus.OK);
+        }
+        return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
 
+    /*
     @GetMapping("/ship")
     public String getShip(){
        return shipService.getShip();
     }
+     */
 }
