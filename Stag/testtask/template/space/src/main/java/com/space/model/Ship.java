@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -15,41 +16,42 @@ public class Ship {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonInclude
-    Long id; //ID корабля
+    private Long id; //ID корабля
 
     @Column(name = "name")
     @JsonInclude
-    String name; //Название корабля (до 50 знаков включительно)
+    private String name; //Название корабля (до 50 знаков включительно)
 
     @Column(name = "planet")
     @JsonInclude
-    String planet; //Планета пребывания (до 50 знаков включительно)
+    private String planet; //Планета пребывания (до 50 знаков включительно)
 
     @Column(name = "shipType")
     @Enumerated(EnumType.STRING)
     @JsonInclude
-    ShipType shipType; //Тип корабля
+    private ShipType shipType; //Тип корабля
 
     @Column(name = "prodDate")
     @Temporal(TemporalType.DATE)
     @JsonInclude
-    Date prodDate; //Дата выпуска.  Диапазон значений года 2800..3019 включительн
+    //private Calendar prodDate;
+    private Date prodDate; //Дата выпуска.  Диапазон значений года 2800..3019 включительн
 
     @Column(name = "isUsed")
     @JsonInclude
-    Boolean isUsed; //Использованный / новый
+    private Boolean isUsed; //Использованный / новый
 
     @Column(name = "speed")
     @JsonInclude
-    Double speed; //Максимальная скорость корабля. Диапазон значений 0,01..0,99 включительно. Используй математическое округление до сотых.
+    private Double speed; //Максимальная скорость корабля. Диапазон значений 0,01..0,99 включительно. Используй математическое округление до сотых.
 
     @Column(name = "crewSize")
     @JsonInclude
-    Integer crewSize; //Количество членов экипажа. Диапазон значений 1..9999 включительно.
+    private Integer crewSize; //Количество членов экипажа. Диапазон значений 1..9999 включительно.
 
     @Column(name = "rating")
     @JsonInclude
-    Double rating; //Рейтинг корабля. Используй математическое округление до сотых.
+    private Double rating; //Рейтинг корабля. Используй математическое округление до сотых.
 
     public Long getId() {
         return id;
@@ -122,6 +124,6 @@ public class Ship {
     public void setRating() {
         double k = 1;
         if (this.isUsed) k = 0.5;
-        this.rating = Math.round(((80 * this.speed * k) / (3020 - (this.getProdDate().getYear() + 1900))) * 100.0) / 100.0 ;
+        this.rating = Math.round(((80 * this.speed * k) / (3020 - (this.getProdDate().getYear()+1900))) * 100.0) / 100.0 ;
     }
 }
