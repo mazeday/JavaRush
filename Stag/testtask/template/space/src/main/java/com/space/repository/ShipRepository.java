@@ -27,7 +27,7 @@ public interface ShipRepository extends PagingAndSortingRepository<Ship, Long> {
     @Query("SELECT ship FROM Ship ship WHERE ship.planet LIKE %:planet%")
     List<Ship> getAllWithFiltersPlanetPageSize(@Param("planet") String planet, Pageable pageable);
 
-    @Query("SELECT ship FROM Ship ship WHERE ship.shipType LIKE :shipType AND ship.prodDate >= :after AND ship.prodDate <= :before")
+    @Query("SELECT ship FROM Ship ship WHERE ship.shipType LIKE :shipType AND ship.prodDate > :after AND ship.prodDate < :before")
     List<Ship> getAllWithFiltersShipTypeAfterBefore(@Param("shipType") ShipType shipType, @Param("after") Date after, @Param("before") Date before, Pageable pageable);
 
     @Query("SELECT ship FROM Ship ship WHERE ship.shipType LIKE :shipType AND ship.speed >= :minSpeed AND ship.speed <= :maxSpeed")

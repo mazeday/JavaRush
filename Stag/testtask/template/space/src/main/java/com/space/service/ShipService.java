@@ -175,13 +175,13 @@ public class ShipService implements ShipServiceImp {
 
     @Override
     public boolean isParamsValid(Ship ship) {
-        System.out.println(ship.getProdDate().getYear());
-        if (ship.getName().isEmpty() || ship.getPlanet().isEmpty() || ship.getSpeed() == 0 || ship.getProdDate().getYear() < 0 || ship.getCrewSize() == 0 || ship.getShipType().name().isEmpty())
+        if (ship.getName().isEmpty() || ship.getPlanet().isEmpty() || ship.getSpeed() == 0 ||
+                ship.getProdDate().getYear() < 0 || ship.getCrewSize() == 0 || ship.getShipType().name().isEmpty())
             return false;
         if ((ship.getName().length() > 50 || ship.getPlanet().length() > 50) ||
-                (ship.getProdDate().getYear()+1900 < 2800 || ship.getProdDate().getYear()+1900 > 3019) ||
-                (ship.getSpeed() < 0.01 || ship.getSpeed() > 0.99)
-                || (ship.getCrewSize() < 1 || ship.getCrewSize() > 9999)) {
+                (ship.getProdDate().getYear() + 1900 < 2800 || ship.getProdDate().getYear()+1900 > 3019) ||
+                (ship.getSpeed() < 0.01 || ship.getSpeed() > 0.99) ||
+                (ship.getCrewSize() < 1 || ship.getCrewSize() > 9999)) {
             return false;
         }
 
